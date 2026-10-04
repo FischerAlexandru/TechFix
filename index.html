@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>TechFix | PC & Laptop Repair</title>
+
+    <meta
+        name="description"
+        content="TechFix provides PC and laptop repairs, upgrades and refurbished computers."
+    >
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,116 +18,400 @@
 
 <header>
     <nav>
-        <div class="logo">TECH<span>FIX</span></div>
+        <a href="#home" class="logo">
+            Tech<span>Fix</span>
+        </a>
 
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#services">Services</a>
-            <a href="#shop">Computers</a>
-            <a href="#repair">Request Repair</a>
+            <a href="#products">Computers</a>
+            <a href="#repair">Repair</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 </header>
 
+
 <main>
 
-<section id="home" class="hero">
-    <div>
-        <p class="small-title">PC & LAPTOP SPECIALISTS</p>
+    <!-- HERO -->
 
-        <h1>
-            We fix your
-            <span>technology.</span>
-        </h1>
+    <section id="home" class="hero">
 
-        <p class="hero-text">
-            Professional PC and laptop repairs, upgrades,
-            cleaning and refurbished computers.
-        </p>
+        <div class="hero-content">
 
-        <a href="#repair" class="button">Request a Repair</a>
-    </div>
-</section>
+            <div class="small-title">
+                PC & LAPTOP SPECIALISTS
+            </div>
 
-<section id="services">
-    <h2>Our Services</h2>
+            <h1>
+                We Fix.<br>
+                We <span>Upgrade.</span><br>
+                We Sell.
+            </h1>
 
-    <div class="cards">
+            <p class="hero-text">
+                TechFix provides reliable computer and laptop repairs,
+                upgrades and tested refurbished machines at affordable prices.
+            </p>
 
-        <div class="card">
-            <div class="icon">🔧</div>
-            <h3>Computer Repair</h3>
-            <p>Diagnose and repair desktop computers and laptops.</p>
+            <div class="hero-buttons">
+                <a href="#repair" class="button">
+                    Request a Repair
+                </a>
+
+                <a href="#products" class="button secondary-button">
+                    View Computers
+                </a>
+            </div>
+
         </div>
 
-        <div class="card">
-            <div class="icon">💿</div>
-            <h3>Windows Installation</h3>
-            <p>Windows installation, drivers and system setup.</p>
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+        <div class="section-title">
+            <div class="small-title">WHAT WE DO</div>
+            <h2>Our Services</h2>
         </div>
 
-        <div class="card">
-            <div class="icon">⚡</div>
-            <h3>SSD & RAM Upgrades</h3>
-            <p>Make your computer faster with hardware upgrades.</p>
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">🔧</div>
+
+                <h3>Computer Repair</h3>
+
+                <p>
+                    Hardware and software troubleshooting,
+                    Windows problems, crashes and general repairs.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">💻</div>
+
+                <h3>Laptop Repair</h3>
+
+                <p>
+                    Laptop diagnostics, cleaning, upgrades,
+                    charging problems and hardware repairs.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">⚡</div>
+
+                <h3>Upgrades</h3>
+
+                <p>
+                    Upgrade RAM, SSDs, storage and other components
+                    to make your computer faster.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">🧹</div>
+
+                <h3>Cleaning</h3>
+
+                <p>
+                    Professional internal cleaning and dust removal
+                    to help your computer stay cool.
+                </p>
+            </div>
+
         </div>
 
-        <div class="card">
-            <div class="icon">🧹</div>
-            <h3>Cleaning</h3>
-            <p>Internal cleaning and thermal paste replacement.</p>
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    <section id="products" class="products-section">
+
+        <div class="section-title">
+
+            <div class="small-title">
+                SHOP
+            </div>
+
+            <h2>Computers & Laptops</h2>
+
+            <p class="section-description">
+                Tested computers and laptops ready for their next owner.
+            </p>
+
         </div>
 
-    </div>
-</section>
 
-<section id="shop">
-    <h2>Computers For Sale</h2>
+        <div class="search-container">
 
-    <div id="products" class="cards"></div>
-</section>
+            <input
+                type="search"
+                id="productSearch"
+                placeholder="Search computers..."
+            >
 
-<section id="repair" class="repair-section">
+        </div>
 
-    <h2>Request a Repair</h2>
 
-    <form id="repairForm">
+        <div id="productGrid" class="cards product-grid">
+            <!-- Products are added by JavaScript -->
+        </div>
 
-        <input type="text" id="name"
-            placeholder="Your name" required>
 
-        <input type="email" id="email"
-            placeholder="Your email" required>
+        <div id="noProducts" class="no-products">
+            No products found.
+        </div>
 
-        <input type="text" id="device"
-            placeholder="Device (e.g. ASUS laptop)" required>
+    </section>
 
-        <textarea id="problem"
-            placeholder="Describe the problem..."
-            required></textarea>
 
-        <button type="submit">Send Repair Request</button>
+    <!-- REPAIR -->
 
-    </form>
+    <section id="repair" class="repair-section">
 
-    <p id="message"></p>
+        <div class="repair-container">
 
-</section>
+            <div class="section-title">
 
-<section id="contact">
-    <h2>Contact TechFix</h2>
+                <div class="small-title">
+                    NEED HELP?
+                </div>
 
-    <p>📍 Serving customers in your city</p>
-    <p>📞 Your phone number</p>
-    <p>📧 Your email</p>
-</section>
+                <h2>Request a Repair</h2>
+
+                <p class="section-description">
+                    Tell us what is wrong with your computer or laptop
+                    and we'll get back to you.
+                </p>
+
+            </div>
+
+
+            <form id="repairForm">
+
+                <label for="name">
+                    Your name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                >
+
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                >
+
+
+                <label for="device">
+                    Device
+                </label>
+
+                <input
+                    type="text"
+                    id="device"
+                    name="device"
+                    placeholder="Example: ASUS laptop"
+                    required
+                >
+
+
+                <label for="problem">
+                    What's wrong?
+                </label>
+
+                <textarea
+                    id="problem"
+                    name="problem"
+                    placeholder="Describe the problem..."
+                    required
+                ></textarea>
+
+
+                <button type="submit">
+                    Send Repair Request
+                </button>
+
+                <p id="message"></p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="about-box">
+
+            <div class="small-title">
+                ABOUT TECHFIX
+            </div>
+
+            <h2>Technology that works for you.</h2>
+
+            <p>
+                TechFix is a small computer repair and refurbishment
+                business focused on helping people get their computers
+                working again without unnecessary costs.
+            </p>
+
+            <p>
+                We repair PCs and laptops, perform upgrades and offer
+                tested refurbished computers for sale.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact-section">
+
+        <div class="section-title">
+
+            <div class="small-title">
+                GET IN TOUCH
+            </div>
+
+            <h2>Contact TechFix</h2>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <div class="icon">📧</div>
+
+                <h3>Email</h3>
+
+                <p>
+                    techfix@example.com
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="icon">📱</div>
+
+                <h3>Phone</h3>
+
+                <p>
+                    Add your phone number here
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="icon">📍</div>
+
+                <h3>Location</h3>
+
+                <p>
+                    Add your city here
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
 
 </main>
 
+
 <footer>
-    <p>© 2026 TechFix. All rights reserved.</p>
+
+    <div class="footer-logo">
+        Tech<span>Fix</span>
+    </div>
+
+    <p>
+        PC & Laptop Repair • Upgrades • Refurbished Computers
+    </p>
+
+    <p class="copyright">
+        © 2026 TechFix. All rights reserved.
+    </p>
+
 </footer>
+
+
+<!-- PRODUCT MODAL -->
+
+<div id="productModal" class="modal">
+
+    <div class="modal-content">
+
+        <button id="closeModal" class="close-button">
+            ×
+        </button>
+
+        <div id="modalIcon" class="modal-icon">
+            💻
+        </div>
+
+        <h2 id="modalName">
+            Product
+        </h2>
+
+        <p id="modalDescription">
+        </p>
+
+        <div id="modalSpecs" class="modal-specs">
+        </div>
+
+        <div id="modalPrice" class="modal-price">
+        </div>
+
+        <a
+            id="modalBuy"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button buy-button"
+        >
+            Buy Now
+        </a>
+
+    </div>
+
+</div>
+
 
 <script src="script.js"></script>
 
