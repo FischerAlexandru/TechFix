@@ -1,123 +1,161 @@
-// ================================
-// TECHFIX PRODUCTS
-// ================================
+// ==========================================
+// TECHFIX - PRODUCTS
+// ==========================================
 
 const products = [
     {
         name: "Refurbished Laptop",
         description: "Cleaned, tested and ready to use.",
         price: "950 RON",
-        paymentLink: "YOUR_REVOLUT_LAPTOP_LINK"
+        paymentLink: "#"
     },
     {
         name: "Gaming PC",
         description: "Tested gaming desktop.",
         price: "1,800 RON",
-        paymentLink: "YOUR_REVOLUT_GAMING_PC_LINK"
+        paymentLink: "#"
     }
 ];
 
 const productsContainer = document.getElementById("products");
 
+if (productsContainer) {
 
-// Create products
-products.forEach(product => {
+    products.forEach((product) => {
 
-    const card = document.createElement("div");
+        const card = document.createElement("div");
+        card.className = "card product-card";
 
-    card.className = "card product-card";
+        card.innerHTML = `
+            <div class="icon">💻</div>
 
-    card.innerHTML = `
-        <div class="icon">💻</div>
+            <h3>${product.name}</h3>
 
-        <h3>${product.name}</h3>
+            <p>${product.description}</p>
 
-        <p>${product.description}</p>
+            <strong class="product-price">
+                ${product.price}
+            </strong>
 
-        <div class="product-price">
-            ${product.price}
-        </div>
+            <div class="product-buttons">
 
-        <div class="product-buttons">
+                <button
+                    type="button"
+                    class="view-button"
+                >
+                    View Details
+                </button>
 
-            <button
-                type="button"
-                class="view-button"
-            >
-                View Details
-            </button>
+                <a
+                    href="${product.paymentLink}"
+                    class="buy-button"
+                >
+                    Buy Now
+                </a>
 
-            <a
-                class="button buy-button"
-                href="${product.paymentLink}"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Buy Now
-            </a>
+            </div>
+        `;
 
-        </div>
-    `;
+        const viewButton =
+            card.querySelector(".view-button");
 
+        viewButton.addEventListener("click", function (event) {
 
-    // View Details button
-    const viewButton =
-        card.querySelector(".view-button");
+            event.preventDefault();
+            event.stopPropagation();
 
-    viewButton.addEventListener("click", function(event) {
+            alert(
+                product.name +
+                "\n\n" +
+                product.description +
+                "\n\nPrice: " +
+                product.price
+            );
 
-        event.stopPropagation();
+        });
 
-        alert(
-            `${product.name}\n\n` +
-            `${product.description}\n\n` +
-            `Price: ${product.price}`
-        );
-
+        productsContainer.appendChild(card);
     });
+}
 
 
-    // Buy button
-    const buyButton =
-        card.querySelector(".buy-button");
+// ==========================================
+// TECHFIX REPAIR REQUEST
+// ==========================================
 
-    buyButton.addEventListener("click", function(event) {
-
-        event.stopPropagation();
-
-    });
-
-
-    productsContainer.appendChild(card);
-
-});
-
-
-// ================================
-// REPAIR REQUEST FORM
-// ================================
-
-const form =
-    document.getElementById("repairForm");
-
-const message =
-    document.getElementById("message");
-
+const form = document.getElementById("repairForm");
+const message = document.getElementById("message");
 
 if (form) {
 
-    form.addEventListener("submit", function(event) {
+    form.addEventListener("submit", function (event) {
 
         event.preventDefault();
 
         const name =
-            document.getElementById("name").value;
+            document.getElementById("name").value.trim();
 
-        message.textContent =
-            `Thanks ${name}! Your repair request has been received.`;
+        const email =
+            document.getElementById("email").value.trim();
 
+        const phone =
+            document.getElementById("phone").value.trim();
+
+        const device =
+            document.getElementById("device").value.trim();
+
+        const problem =
+            document.getElementById("problem").value.trim();
+
+
+        // Create the email
+        const subject =
+            encodeURIComponent(
+                "TechFix Repair Request - " + device
+            );
+
+        const body =
+            encodeURIComponent(
+`NEW TECHFIX REPAIR REQUEST
+
+Customer:
+${name}
+
+Email:
+${email}
+
+Phone:
+${phone}
+
+Device:
+${device}
+
+Problem:
+${problem}
+
+--------------------------------
+TechFix
+`
+            );
+
+
+        // Open the visitor's email program
+        window.location.href =
+            `mailto:alexandrufischer14@gmail.com?subject=${subject}&body=${body}`;
+
+
+        // Show confirmation
+        if (message) {
+
+            message.textContent =
+                "Your repair request has been prepared. Please send the email that opened.";
+
+            message.style.color = "#20c968";
+        }
+
+
+        // Clear form
         form.reset();
 
     });
-
 }
