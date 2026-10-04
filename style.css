@@ -445,4 +445,8 @@ footer p {
     .modal-content {
         padding: 30px 20px;
     }
+    body {
+    user-select: none;
+    -webkit-user-select: none;
+}
 }
