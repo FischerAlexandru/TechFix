@@ -450,3 +450,40 @@ footer p {
     -webkit-user-select: none;
 }
 }
+.product-card {
+    cursor: default;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.product-card h3,
+.product-card p,
+.product-card .icon,
+.product-card .product-price {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.product-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.view-button,
+.buy-button {
+    cursor: pointer;
+}
+
+.view-button {
+    background: transparent;
+    border: 1px solid #20c968;
+}
+
+.view-button:hover {
+    background: #159447;
+}
+
+.buy-button {
+    background: #159447;
+}
